@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "vite build && node deploy.js",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
