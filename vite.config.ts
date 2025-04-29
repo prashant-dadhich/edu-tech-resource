@@ -25,5 +25,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/edu-tech-resource/', // Set the base path for GitHub Pages
 }));
