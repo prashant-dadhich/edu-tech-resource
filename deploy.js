@@ -1,5 +1,4 @@
-
-const ghpages = require('gh-pages');
+import ghpages from 'gh-pages';
 
 // Deploy the dist directory to gh-pages branch
 ghpages.publish('dist', {
