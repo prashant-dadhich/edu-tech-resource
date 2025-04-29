@@ -7,7 +7,7 @@ import { educatorData } from '../data/educatorData';
 
 const EducatorProfile: React.FC = () => {
   const { name, image, title, background, experience, education, compatibility } = educatorData;
-
+ console.log(image)
   return (
     <section className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="md:flex">

@@ -15,7 +15,7 @@ const Index: React.FC = () => {
         <div className="page-container">
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-education-darkBlue mb-4">
-              Learn with Naman
+              Learn with Prashant
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Access educational resources organized by class and category. 
@@ -45,7 +45,7 @@ const Index: React.FC = () => {
           
           <section className="bg-education-lightGray rounded-lg p-6 mb-12">
             <h2 className="text-2xl font-semibold text-education-darkBlue mb-4">
-              Why Learn with Naman?
+              Why Learn with Prashant?
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white p-5 rounded-lg shadow-sm">
@@ -63,7 +63,7 @@ const Index: React.FC = () => {
               <div className="bg-white p-5 rounded-lg shadow-sm">
                 <h3 className="font-medium text-lg mb-2 text-education-blue">Expert-Crafted Material</h3>
                 <p className="text-gray-600">
-                  Materials created by education expert Naman for optimal learning.
+                  Materials created by education expert Prashant for optimal learning.
                 </p>
               </div>
             </div>
