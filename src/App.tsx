@@ -10,12 +10,28 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Get the repository name from the URL for GitHub Pages
+const getBasename = () => {
+  // When running locally, use root path
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return '/';
+  }
+  
+  // On GitHub pages, get the repository name from pathname
+  const pathSegments = window.location.pathname.split('/');
+  if (pathSegments.length > 1) {
+    return '/' + pathSegments[1];
+  }
+  
+  return '/';
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={getBasename()}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/class/:classId" element={<ClassResources />} />
