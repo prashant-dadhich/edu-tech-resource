@@ -53,13 +53,16 @@ const ClassResources: React.FC = () => {
             <h1 className="page-title">Resources for {classData.name}</h1>
             <p className="text-lg text-gray-600 max-w-4xl">
               Access all educational materials for {classData.name}. 
-              Select a category to view available resources.
+              Click on "Open Google Drive" to access resources for each category.
             </p>
           </div>
           
           <div className="resource-grid mb-12">
             {classData.categories.map((category) => {
-              const resourceCount = getResourcesByClassAndCategory(classData.id, category.id).length;
+              const resources = getResourcesByClassAndCategory(classData.id, category.id);
+              const resourceCount = resources.length;
+              // Get the first resource's drive link if resources exist, otherwise use a default or empty string
+              const driveLink = resourceCount > 0 ? resources[0].driveLink : '';
               
               return (
                 <CategoryCard
@@ -70,6 +73,7 @@ const ClassResources: React.FC = () => {
                   description={category.description}
                   icon={category.icon}
                   count={resourceCount}
+                  driveLink={driveLink}
                 />
               );
             })}

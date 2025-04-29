@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Book, FileText } from 'lucide-react';
+import { Book, FileText, ExternalLink } from 'lucide-react';
+import { Button } from './ui/button';
 
 interface CategoryCardProps {
   classId: string;
@@ -10,6 +10,7 @@ interface CategoryCardProps {
   description: string;
   icon: string;
   count?: number;
+  driveLink?: string;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ 
@@ -18,7 +19,8 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   name, 
   description, 
   icon,
-  count = 0
+  count = 0,
+  driveLink
 }) => {
   // Render the appropriate icon based on the icon string
   const renderIcon = () => {
@@ -32,10 +34,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   };
 
   return (
-    <Link 
-      to={`/class/${classId}/category/${id}`} 
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-    >
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div>
@@ -50,16 +49,22 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         <h3 className="text-lg font-semibold text-education-darkBlue mb-2">{name}</h3>
         <p className="text-gray-600 text-sm mb-4">{description}</p>
         <div className="flex justify-end">
-          <span className="inline-flex items-center text-education-purple font-medium text-sm">
-            View Resources
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </span>
+          {count > 0 ? (
+            <a 
+              href={driveLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-education-blue hover:bg-education-darkBlue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-education-blue"
+            >
+              Open Google Drive
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          ) : (
+            <span className="text-gray-400 text-sm">No resources available</span>
+          )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
