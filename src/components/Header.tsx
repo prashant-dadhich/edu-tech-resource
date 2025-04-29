@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { educatorData } from '../data/educatorData';
 
 interface HeaderProps {
   classTitle?: string;
@@ -21,13 +23,21 @@ const Header: React.FC<HeaderProps> = ({ classTitle }) => {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="flex items-center space-x-4">
             {classTitle && (
               <span className="text-lg font-medium mr-2">{classTitle}</span>
             )}
-            <span className="text-sm text-gray-200 hidden md:inline">
-              Crafted by Naman
-            </span>
+            <div className="hidden md:flex items-center">
+              <span className="text-sm text-gray-200 mr-3">
+                Crafted by {educatorData.name}
+              </span>
+              <Avatar className="h-8 w-8 border-2 border-white">
+                <AvatarImage src={educatorData.image} alt={educatorData.name} />
+                <AvatarFallback className="bg-education-blue text-white text-xs">
+                  {educatorData.name.split(' ').map(n => n[0]).join('')}
+                </AvatarFallback>
+              </Avatar>
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ClassCard from '../components/ClassCard';
+import EducatorProfile from '../components/EducatorProfile';
 import { classes } from '../data/classData';
 
 const Index: React.FC = () => {
@@ -21,6 +22,11 @@ const Index: React.FC = () => {
               Select your class to get started.
             </p>
           </div>
+          
+          <section className="mb-12">
+            <h2 className="section-title text-center mb-8">Know Your Educator</h2>
+            <EducatorProfile />
+          </section>
           
           <section>
             <h2 className="section-title text-center mb-8">Select Your Class</h2>
