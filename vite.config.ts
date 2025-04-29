@@ -25,5 +25,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/prashant-dadhich.github.io/', // Set the base path for GitHub Pages
+  base: '/', // Set the base path for GitHub Pages
 }));
