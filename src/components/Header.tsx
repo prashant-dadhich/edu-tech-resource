@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ classTitle }) => {
                 Crafted by {educatorData.name}
               </span>
               <Avatar className="h-8 w-8 border-2 border-white">
-                <AvatarImage src={educatorData.image} alt={educatorData.name} />
+                <AvatarImage src={"/edu-tech-resource/"+educatorData.image} alt={educatorData.name} />
                 <AvatarFallback className="bg-education-blue text-white text-xs">
                   {educatorData.name.split(' ').map(n => n[0]).join('')}
                 </AvatarFallback>
