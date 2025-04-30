@@ -84,7 +84,8 @@ const CategoryChapters: React.FC = () => {
                   <p>Access complete {category.name.toLowerCase()} for this chapter.</p>
                 </CardContent>
                 <CardFooter className="flex justify-end">
-                  <a 
+                  {
+                    chapter.driveLink ? <a 
                     href={chapter.driveLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -92,7 +93,8 @@ const CategoryChapters: React.FC = () => {
                   >
                     Open Google Drive
                     <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
+                  </a> : <h3 className="text-l font-medium text-gray-600 mb-2">No Link Available Yet</h3>
+                }
                 </CardFooter>
               </Card>
             ))}
