@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Book, FileText, ExternalLink } from 'lucide-react';
-import { Button } from './ui/button';
+import { Link } from 'react-router-dom';
 
 interface CategoryCardProps {
   classId: string;
@@ -19,8 +19,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   name, 
   description, 
   icon,
-  count = 0,
-  driveLink
+  count = 0
 }) => {
   // Render the appropriate icon based on the icon string
   const renderIcon = () => {
@@ -50,15 +49,13 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         <p className="text-gray-600 text-sm mb-4">{description}</p>
         <div className="flex justify-end">
           {count > 0 ? (
-            <a 
-              href={driveLink} 
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              to={`/class/${classId}/category/${id}`}
               className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-education-blue hover:bg-education-darkBlue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-education-blue"
             >
-              Open Google Drive
+              View Chapters
               <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           ) : (
             <span className="text-gray-400 text-sm">No resources available</span>
           )}

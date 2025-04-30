@@ -1,9 +1,15 @@
+export type Chapter = {
+  id: string;
+  title: string;
+  driveLink: string;
+};
 
 export type ResourceCategory = {
   id: string;
   name: string;
   description: string;
   icon: string;
+  chapters?: Chapter[];
 };
 
 export type Resource = {
@@ -12,6 +18,7 @@ export type Resource = {
   description: string;
   driveLink: string;
   date: string;
+  chapterId?: string; // Reference to a specific chapter
 };
 
 export type ClassData = {
@@ -29,18 +36,40 @@ export const resourceCategories: ResourceCategory[] = [
     name: "Notes",
     description: "Comprehensive study notes",
     icon: "file-text",
+    chapters: [
+      { id: "matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/sample-matter" },
+      { id: "matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/sample-pure" },
+      { id: "atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/sample-atoms" },
+      { id: "structure-atom", title: "4. Structure of Atom", driveLink: "https://drive.google.com/drive/folders/sample-structure" },
+      { id: "cell", title: "5. Cell", driveLink: "https://drive.google.com/drive/folders/sample-cell" },
+      { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/sample-tissue" },
+      { id: "motion", title: "7. Motion", driveLink: "https://drive.google.com/drive/folders/sample-motion" },
+      { id: "force-laws", title: "8. Force and Laws of Motion", driveLink: "https://drive.google.com/drive/folders/sample-force" },
+      { id: "gravitation", title: "9. Gravitation", driveLink: "https://drive.google.com/drive/folders/sample-gravitation" },
+      { id: "work-energy", title: "10. Work and Energy", driveLink: "https://drive.google.com/drive/folders/sample-energy" },
+      { id: "sound", title: "11. Sound", driveLink: "https://drive.google.com/drive/folders/sample-sound" },
+      { id: "food-resources", title: "12. Food Resources and Development", driveLink: "https://drive.google.com/drive/folders/sample-food" },
+    ]
   },
   {
     id: "qa",
     name: "Question & Answers",
     description: "Practice questions with answers",
     icon: "book",
+    chapters: [
+      { id: "qa-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/sample-qa-matter" },
+      { id: "qa-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/sample-qa-pure" },
+    ]
   },
   {
     id: "ncert",
     name: "NCERT Examples",
     description: "Examples from NCERT textbooks",
     icon: "book",
+    chapters: [
+      { id: "ncert-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/sample-ncert-matter" },
+      { id: "ncert-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/sample-ncert-pure" },
+    ]
   },
   {
     id: "worksheets",
@@ -277,4 +306,10 @@ export const getResourcesByClassAndCategory = (
 // Helper function to get a category by ID
 export const getCategoryById = (categoryId: string): ResourceCategory | undefined => {
   return resourceCategories.find((category) => category.id === categoryId);
+};
+
+// Helper function to get chapters for a category
+export const getChaptersByCategory = (categoryId: string): Chapter[] => {
+  const category = getCategoryById(categoryId);
+  return category?.chapters || [];
 };
