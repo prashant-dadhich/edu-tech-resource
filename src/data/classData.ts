@@ -45,24 +45,41 @@ const class7NotesChapters: Chapter[] = [
 ];
 
 const class9NotesChapters: Chapter[] = [
-  { id: "matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/class9-matter" },
-  { id: "matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-pure" },
-  { id: "atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-atoms" },
-  { id: "structure-atom", title: "4. Structure of Atom", driveLink: "https://drive.google.com/drive/folders/class9-structure" },
-  { id: "cell", title: "5. Cell", driveLink: "https://drive.google.com/drive/folders/class9-cell" },
-  { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/class9-tissue" },
-  { id: "motion", title: "7. Motion", driveLink: "https://drive.google.com/drive/folders/class9-motion" },
-  { id: "force-laws", title: "8. Force and Laws of Motion", driveLink: "https://drive.google.com/drive/folders/class9-force" },
-  { id: "gravitation", title: "9. Gravitation", driveLink: "https://drive.google.com/drive/folders/class9-gravitation" },
-  { id: "work-energy", title: "10. Work and Energy", driveLink: "https://drive.google.com/drive/folders/class9-energy" },
-  { id: "sound", title: "11. Sound", driveLink: "https://drive.google.com/drive/folders/class9-sound" },
-  { id: "food-resources", title: "12. Food Resources and Development", driveLink: "https://drive.google.com/drive/folders/class9-food" },
+  { id: "matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/file/d/1juymyywLoEfZ-i5mgRFqo40JNgxLhi9t/view?usp=drivesdk" },
+  // { id: "matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-pure" },
+  // { id: "atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-atoms" },
+  // { id: "structure-atom", title: "4. Structure of Atom", driveLink: "https://drive.google.com/drive/folders/class9-structure" },
+  { id: "cell", title: "5. Cell", driveLink: "https://drive.google.com/file/d/1k2kWSwj83YPb-VaooFHW_eIOrs0vl4Mv/view?usp=drivesdk" },
+  // { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/class9-tissue" },
+  { id: "motion", title: "7. Motion", driveLink: "https://drive.google.com/file/d/1k9eX7SzdYH2wLkPmb10NuQeM6aXqcIzz/view?usp=drivesdk" },
+  // { id: "force-laws", title: "8. Force and Laws of Motion", driveLink: "https://drive.google.com/drive/folders/class9-force" },
+  // { id: "gravitation", title: "9. Gravitation", driveLink: "https://drive.google.com/drive/folders/class9-gravitation" },
+  // { id: "work-energy", title: "10. Work and Energy", driveLink: "https://drive.google.com/drive/folders/class9-energy" },
+  // { id: "sound", title: "11. Sound", driveLink: "https://drive.google.com/drive/folders/class9-sound" },
+  // { id: "food-resources", title: "12. Food Resources and Development", driveLink: "https://drive.google.com/drive/folders/class9-food" },
 ];
 
+
+// class-10
+// 1. Chemical reactions and equation 
+// 2. Acid bases and salts 
+// 3. Metals and nonmetals 
+// 4. Carbon and its compounds 
+// 5. Life processes 
+// 6. Control and coordination 
+// 7. Reproduction in organisms 
+// 8. Heredity 
+// 9. Light reflection and refraction 
+// 10. Human eye and colourful world 
+// 11. Electricity 
+// 12. Magnetic fields of electric current 
+// 13. Our environment
 const class10NotesChapters: Chapter[] = [
-  { id: "chemical-reactions", title: "1. Chemical Reactions and Equations", driveLink: "https://drive.google.com/drive/folders/class10-chemical" },
-  { id: "acids-bases", title: "2. Acids, Bases and Salts", driveLink: "https://drive.google.com/drive/folders/class10-acids" },
-  { id: "metals-nonmetals", title: "3. Metals and Non-metals", driveLink: "https://drive.google.com/drive/folders/class10-metals" },
+  { id: "chemical-reactions", title: "1. Chemical Reactions and Equations", driveLink: "https://drive.google.com/file/d/1kJUbvYklLVId_FLuPLRrGg_1zqNSGkvK/view?usp=drivesdk" },
+  // { id: "acids-bases", title: "2. Acids, Bases and Salts", driveLink: "https://drive.google.com/drive/folders/class10-acids" },
+  // { id: "metals-nonmetals", title: "3. Metals and Non-metals", driveLink: "https://drive.google.com/drive/folders/class10-metals" },
+  { id: "life-processes", title: "5. Life processes", driveLink: "https://drive.google.com/file/d/1kKMYc38Rln6KnDCwgZoIV7S4hJGQF7c1/view?usp=drivesdk" },
+  { id: "light", title: "9. Light reflection and refraction", driveLink: "https://drive.google.com/drive/folders/class10-metals" },
 ];
 
 // Define chapters by class for the Q&A category
@@ -72,9 +89,9 @@ const class6QAChapters: Chapter[] = [
 ];
 
 const class9QAChapters: Chapter[] = [
-  { id: "qa-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/class9-qa-matter" },
-  { id: "qa-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-qa-pure" },
-  { id: "qa-atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-qa-atoms" },
+  // { id: "qa-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/class9-qa-matter" },
+  // { id: "qa-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-qa-pure" },
+  // { id: "qa-atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-qa-atoms" },
 ];
 
 // Class-specific resource categories
@@ -147,87 +164,87 @@ const getClassCategories = (classId: string): ResourceCategory[] => {
 
 // Sample data for each class
 export const classes: ClassData[] = [
-  {
-    id: "class-6",
-    name: "Class 6",
-    description: "Educational resources for Class 6 students",
-    categories: getClassCategories("class-6"),
-    resources: {
-      notes: [
-        {
-          id: "class6-notes-1",
-          title: "Mathematics Chapter 1 Notes",
-          description: "Comprehensive notes on Numbers",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-08-15",
-        },
-        {
-          id: "class6-notes-2",
-          title: "Science Chapter 1 Notes",
-          description: "Food: Where Does It Come From?",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-08-20",
-        },
-      ],
-      qa: [
-        {
-          id: "class6-qa-1",
-          title: "English Q&A Set 1",
-          description: "Practice questions on grammar",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-09-05",
-        },
-      ],
-      ncert: [
-        {
-          id: "class6-ncert-1",
-          title: "NCERT Solutions - Math Chapter 1",
-          description: "Solutions to all examples in Chapter 1",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-07-10",
-        },
-      ],
-      worksheets: [],
-      tests: [],
-      pyq: [],
-    },
-  },
-  {
-    id: "class-7",
-    name: "Class 7",
-    description: "Educational resources for Class 7 students",
-    categories: getClassCategories("class-7"),
-    resources: {
-      notes: [
-        {
-          id: "class7-notes-1",
-          title: "Mathematics Chapter 1 Notes",
-          description: "Integers and operations",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-08-12",
-        },
-      ],
-      qa: [],
-      ncert: [],
-      worksheets: [],
-      tests: [],
-      pyq: [],
-    },
-  },
-  {
-    id: "class-8",
-    name: "Class 8",
-    description: "Educational resources for Class 8 students",
-    categories: getClassCategories("class-8"),
-    resources: {
-      notes: [],
-      qa: [],
-      ncert: [],
-      worksheets: [],
-      tests: [],
-      pyq: [],
-    },
-  },
+  // {
+  //   id: "class-6",
+  //   name: "Class 6",
+  //   description: "Educational resources for Class 6 students",
+  //   categories: getClassCategories("class-6"),
+  //   resources: {
+  //     notes: [
+  //       {
+  //         id: "class6-notes-1",
+  //         title: "Mathematics Chapter 1 Notes",
+  //         description: "Comprehensive notes on Numbers",
+  //         driveLink: "https://drive.google.com/drive/folders/sample-link",
+  //         date: "2023-08-15",
+  //       },
+  //       {
+  //         id: "class6-notes-2",
+  //         title: "Science Chapter 1 Notes",
+  //         description: "Food: Where Does It Come From?",
+  //         driveLink: "https://drive.google.com/drive/folders/sample-link",
+  //         date: "2023-08-20",
+  //       },
+  //     ],
+  //     qa: [
+  //       {
+  //         id: "class6-qa-1",
+  //         title: "English Q&A Set 1",
+  //         description: "Practice questions on grammar",
+  //         driveLink: "https://drive.google.com/drive/folders/sample-link",
+  //         date: "2023-09-05",
+  //       },
+  //     ],
+  //     ncert: [
+  //       {
+  //         id: "class6-ncert-1",
+  //         title: "NCERT Solutions - Math Chapter 1",
+  //         description: "Solutions to all examples in Chapter 1",
+  //         driveLink: "https://drive.google.com/drive/folders/sample-link",
+  //         date: "2023-07-10",
+  //       },
+  //     ],
+  //     worksheets: [],
+  //     tests: [],
+  //     pyq: [],
+  //   },
+  // },
+  // {
+  //   id: "class-7",
+  //   name: "Class 7",
+  //   description: "Educational resources for Class 7 students",
+  //   categories: getClassCategories("class-7"),
+  //   resources: {
+  //     notes: [
+  //       {
+  //         id: "class7-notes-1",
+  //         title: "Mathematics Chapter 1 Notes",
+  //         description: "Integers and operations",
+  //         driveLink: "https://drive.google.com/drive/folders/sample-link",
+  //         date: "2023-08-12",
+  //       },
+  //     ],
+  //     qa: [],
+  //     ncert: [],
+  //     worksheets: [],
+  //     tests: [],
+  //     pyq: [],
+  //   },
+  // },
+  // {
+  //   id: "class-8",
+  //   name: "Class 8",
+  //   description: "Educational resources for Class 8 students",
+  //   categories: getClassCategories("class-8"),
+  //   resources: {
+  //     notes: [],
+  //     qa: [],
+  //     ncert: [],
+  //     worksheets: [],
+  //     tests: [],
+  //     pyq: [],
+  //   },
+  // },
   {
     id: "class-9",
     name: "Class 9",
@@ -251,49 +268,49 @@ export const classes: ClassData[] = [
         },
       ],
       qa: [
-        {
-          id: "class9-qa-1",
-          title: "Science Q&A Set 1",
-          description: "Practice questions on Matter",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-09-01",
-        },
+        // {
+        //   id: "class9-qa-1",
+        //   title: "Science Q&A Set 1",
+        //   description: "Practice questions on Matter",
+        //   driveLink: "https://drive.google.com/drive/folders/sample-link",
+        //   date: "2023-09-01",
+        // },
       ],
       ncert: [
-        {
-          id: "class9-ncert-1",
-          title: "NCERT Solutions - Science Chapter 1",
-          description: "Solutions to all examples in Chapter 1",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-07-05",
-        },
+        // {
+        //   id: "class9-ncert-1",
+        //   title: "NCERT Solutions - Science Chapter 1",
+        //   description: "Solutions to all examples in Chapter 1",
+        //   driveLink: "https://drive.google.com/drive/folders/sample-link",
+        //   date: "2023-07-05",
+        // },
       ],
       worksheets: [
-        {
-          id: "class9-worksheet-1",
-          title: "Mathematics Worksheet 1",
-          description: "Practice problems on Number Systems",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-09-10",
-        },
+        // {
+        //   id: "class9-worksheet-1",
+        //   title: "Mathematics Worksheet 1",
+        //   description: "Practice problems on Number Systems",
+        //   driveLink: "https://drive.google.com/drive/folders/sample-link",
+        //   date: "2023-09-10",
+        // },
       ],
       tests: [
-        {
-          id: "class9-test-1",
-          title: "Science Unit Test 1",
-          description: "Test on Chapters 1-3 with answer key",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-09-15",
-        },
+        // {
+        //   id: "class9-test-1",
+        //   title: "Science Unit Test 1",
+        //   description: "Test on Chapters 1-3 with answer key",
+        //   driveLink: "https://drive.google.com/drive/folders/sample-link",
+        //   date: "2023-09-15",
+        // },
       ],
       pyq: [
-        {
-          id: "class9-pyq-1",
-          title: "Last Year Final Exam Questions",
-          description: "Previous year question papers with solutions",
-          driveLink: "https://drive.google.com/drive/folders/sample-link",
-          date: "2023-07-20",
-        },
+        // {
+        //   id: "class9-pyq-1",
+        //   title: "Last Year Final Exam Questions",
+        //   description: "Previous year question papers with solutions",
+        //   driveLink: "https://drive.google.com/drive/folders/sample-link",
+        //   date: "2023-07-20",
+        // },
       ],
     },
   },
@@ -303,7 +320,13 @@ export const classes: ClassData[] = [
     description: "Educational resources for Class 10 students",
     categories: getClassCategories("class-10"),
     resources: {
-      notes: [],
+      notes: [{
+        id: "class9-notes-1",
+        title: "Science Chapter 1 Notes",
+        description: "Matter in Our Surroundings",
+        driveLink: "https://drive.google.com/drive/folders/sample-link",
+        date: "2023-08-10",
+      },],
       qa: [],
       ncert: [],
       worksheets: [],
