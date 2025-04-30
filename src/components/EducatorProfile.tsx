@@ -14,7 +14,7 @@ const EducatorProfile: React.FC = () => {
         {/* Educator Image Section */}
         <div className="md:w-1/3 bg-education-darkBlue flex flex-col items-center justify-center py-8 px-4">
           <Avatar className="h-36 w-36 border-4 border-white mb-4">
-            <AvatarImage src={"/edu-tech-resource"+image} alt={name} />
+            <AvatarImage src={"/edu-tech-resource/"+image} alt={name} />
             <AvatarFallback className="bg-education-blue text-2xl font-bold text-white">
               {name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
