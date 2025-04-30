@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import EducatorProfile from '../components/EducatorProfile';
 import { ExternalLink } from 'lucide-react';
 import { 
   getClassById, 
@@ -105,6 +106,11 @@ const CategoryChapters: React.FC = () => {
               </div>
             )}
           </div>
+          
+          <section className="mb-12">
+            <h2 className="section-title mb-6">About Your Educator</h2>
+            <EducatorProfile />
+          </section>
         </div>
       </main>
       

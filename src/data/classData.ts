@@ -1,3 +1,4 @@
+
 export type Chapter = {
   id: string;
   title: string;
@@ -29,67 +30,120 @@ export type ClassData = {
   resources: Record<string, Resource[]>;
 };
 
-// Define resource categories that are common across classes
-export const resourceCategories: ResourceCategory[] = [
-  {
-    id: "notes",
-    name: "Notes",
-    description: "Comprehensive study notes",
-    icon: "file-text",
-    chapters: [
-      { id: "matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/sample-matter" },
-      { id: "matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/sample-pure" },
-      { id: "atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/sample-atoms" },
-      { id: "structure-atom", title: "4. Structure of Atom", driveLink: "https://drive.google.com/drive/folders/sample-structure" },
-      { id: "cell", title: "5. Cell", driveLink: "https://drive.google.com/drive/folders/sample-cell" },
-      { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/sample-tissue" },
-      { id: "motion", title: "7. Motion", driveLink: "https://drive.google.com/drive/folders/sample-motion" },
-      { id: "force-laws", title: "8. Force and Laws of Motion", driveLink: "https://drive.google.com/drive/folders/sample-force" },
-      { id: "gravitation", title: "9. Gravitation", driveLink: "https://drive.google.com/drive/folders/sample-gravitation" },
-      { id: "work-energy", title: "10. Work and Energy", driveLink: "https://drive.google.com/drive/folders/sample-energy" },
-      { id: "sound", title: "11. Sound", driveLink: "https://drive.google.com/drive/folders/sample-sound" },
-      { id: "food-resources", title: "12. Food Resources and Development", driveLink: "https://drive.google.com/drive/folders/sample-food" },
-    ]
-  },
-  {
-    id: "qa",
-    name: "Question & Answers",
-    description: "Practice questions with answers",
-    icon: "book",
-    chapters: [
-      { id: "qa-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/sample-qa-matter" },
-      { id: "qa-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/sample-qa-pure" },
-    ]
-  },
-  {
-    id: "ncert",
-    name: "NCERT Examples",
-    description: "Examples from NCERT textbooks",
-    icon: "book",
-    chapters: [
-      { id: "ncert-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/sample-ncert-matter" },
-      { id: "ncert-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/sample-ncert-pure" },
-    ]
-  },
-  {
-    id: "worksheets",
-    name: "Worksheets",
-    description: "Practice worksheets for exercises",
-    icon: "file-text",
-  },
-  {
-    id: "tests",
-    name: "Tests & Answer Keys",
-    description: "Sample tests with answer keys",
-    icon: "file-text",
-  },
-  {
-    id: "pyq",
-    name: "Previous Year Questions",
-    description: "Questions from previous years' exams",
-    icon: "file-text",
-  },
+// Define chapters by class for the notes category
+const class6NotesChapters: Chapter[] = [
+  { id: "food", title: "1. Food: Where Does It Come From?", driveLink: "https://drive.google.com/drive/folders/class6-food" },
+  { id: "components", title: "2. Components of Food", driveLink: "https://drive.google.com/drive/folders/class6-components" },
+  { id: "fibre", title: "3. Fibre to Fabric", driveLink: "https://drive.google.com/drive/folders/class6-fibre" },
+  { id: "sorting", title: "4. Sorting Materials into Groups", driveLink: "https://drive.google.com/drive/folders/class6-sorting" },
 ];
+
+const class7NotesChapters: Chapter[] = [
+  { id: "nutrition", title: "1. Nutrition in Plants", driveLink: "https://drive.google.com/drive/folders/class7-nutrition" },
+  { id: "animals", title: "2. Nutrition in Animals", driveLink: "https://drive.google.com/drive/folders/class7-animals" },
+  { id: "fibre", title: "3. Fibre to Fabric", driveLink: "https://drive.google.com/drive/folders/class7-fibre" },
+];
+
+const class9NotesChapters: Chapter[] = [
+  { id: "matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/class9-matter" },
+  { id: "matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-pure" },
+  { id: "atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-atoms" },
+  { id: "structure-atom", title: "4. Structure of Atom", driveLink: "https://drive.google.com/drive/folders/class9-structure" },
+  { id: "cell", title: "5. Cell", driveLink: "https://drive.google.com/drive/folders/class9-cell" },
+  { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/class9-tissue" },
+  { id: "motion", title: "7. Motion", driveLink: "https://drive.google.com/drive/folders/class9-motion" },
+  { id: "force-laws", title: "8. Force and Laws of Motion", driveLink: "https://drive.google.com/drive/folders/class9-force" },
+  { id: "gravitation", title: "9. Gravitation", driveLink: "https://drive.google.com/drive/folders/class9-gravitation" },
+  { id: "work-energy", title: "10. Work and Energy", driveLink: "https://drive.google.com/drive/folders/class9-energy" },
+  { id: "sound", title: "11. Sound", driveLink: "https://drive.google.com/drive/folders/class9-sound" },
+  { id: "food-resources", title: "12. Food Resources and Development", driveLink: "https://drive.google.com/drive/folders/class9-food" },
+];
+
+const class10NotesChapters: Chapter[] = [
+  { id: "chemical-reactions", title: "1. Chemical Reactions and Equations", driveLink: "https://drive.google.com/drive/folders/class10-chemical" },
+  { id: "acids-bases", title: "2. Acids, Bases and Salts", driveLink: "https://drive.google.com/drive/folders/class10-acids" },
+  { id: "metals-nonmetals", title: "3. Metals and Non-metals", driveLink: "https://drive.google.com/drive/folders/class10-metals" },
+];
+
+// Define chapters by class for the Q&A category
+const class6QAChapters: Chapter[] = [
+  { id: "qa-food", title: "1. Food: Where Does It Come From?", driveLink: "https://drive.google.com/drive/folders/class6-qa-food" },
+  { id: "qa-components", title: "2. Components of Food", driveLink: "https://drive.google.com/drive/folders/class6-qa-components" },
+];
+
+const class9QAChapters: Chapter[] = [
+  { id: "qa-matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/drive/folders/class9-qa-matter" },
+  { id: "qa-matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-qa-pure" },
+  { id: "qa-atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-qa-atoms" },
+];
+
+// Class-specific resource categories
+const getClassCategories = (classId: string): ResourceCategory[] => {
+  // Base categories without chapters
+  const baseCategories: ResourceCategory[] = [
+    {
+      id: "notes",
+      name: "Notes",
+      description: "Comprehensive study notes",
+      icon: "file-text",
+      chapters: [],
+    },
+    {
+      id: "qa",
+      name: "Question & Answers",
+      description: "Practice questions with answers",
+      icon: "book",
+      chapters: [],
+    },
+    {
+      id: "ncert",
+      name: "NCERT Examples",
+      description: "Examples from NCERT textbooks",
+      icon: "book",
+      chapters: [],
+    },
+    {
+      id: "worksheets",
+      name: "Worksheets",
+      description: "Practice worksheets for exercises",
+      icon: "file-text",
+    },
+    {
+      id: "tests",
+      name: "Tests & Answer Keys",
+      description: "Sample tests with answer keys",
+      icon: "file-text",
+    },
+    {
+      id: "pyq",
+      name: "Previous Year Questions",
+      description: "Questions from previous years' exams",
+      icon: "file-text",
+    },
+  ];
+  
+  // Assign class-specific chapters
+  switch (classId) {
+    case "class-6":
+      baseCategories[0].chapters = class6NotesChapters;
+      baseCategories[1].chapters = class6QAChapters;
+      break;
+    case "class-7":
+      baseCategories[0].chapters = class7NotesChapters;
+      break;
+    case "class-9":
+      baseCategories[0].chapters = class9NotesChapters;
+      baseCategories[1].chapters = class9QAChapters;
+      break;
+    case "class-10":
+      baseCategories[0].chapters = class10NotesChapters;
+      break;
+    default:
+      break;
+  }
+  
+  return baseCategories;
+};
 
 // Sample data for each class
 export const classes: ClassData[] = [
@@ -97,7 +151,7 @@ export const classes: ClassData[] = [
     id: "class-6",
     name: "Class 6",
     description: "Educational resources for Class 6 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-6"),
     resources: {
       notes: [
         {
@@ -142,7 +196,7 @@ export const classes: ClassData[] = [
     id: "class-7",
     name: "Class 7",
     description: "Educational resources for Class 7 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-7"),
     resources: {
       notes: [
         {
@@ -164,7 +218,7 @@ export const classes: ClassData[] = [
     id: "class-8",
     name: "Class 8",
     description: "Educational resources for Class 8 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-8"),
     resources: {
       notes: [],
       qa: [],
@@ -178,7 +232,7 @@ export const classes: ClassData[] = [
     id: "class-9",
     name: "Class 9",
     description: "Educational resources for Class 9 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-9"),
     resources: {
       notes: [
         {
@@ -247,7 +301,7 @@ export const classes: ClassData[] = [
     id: "class-10",
     name: "Class 10",
     description: "Educational resources for Class 10 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-10"),
     resources: {
       notes: [],
       qa: [],
@@ -261,7 +315,7 @@ export const classes: ClassData[] = [
     id: "class-11",
     name: "Class 11",
     description: "Educational resources for Class 11 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-11"),
     resources: {
       notes: [],
       qa: [],
@@ -275,7 +329,7 @@ export const classes: ClassData[] = [
     id: "class-12",
     name: "Class 12",
     description: "Educational resources for Class 12 students",
-    categories: resourceCategories,
+    categories: getClassCategories("class-12"),
     resources: {
       notes: [],
       qa: [],
@@ -305,7 +359,12 @@ export const getResourcesByClassAndCategory = (
 
 // Helper function to get a category by ID
 export const getCategoryById = (categoryId: string): ResourceCategory | undefined => {
-  return resourceCategories.find((category) => category.id === categoryId);
+  // Look for the category across all classes
+  for (const classData of classes) {
+    const category = classData.categories.find((cat) => cat.id === categoryId);
+    if (category) return category;
+  }
+  return undefined;
 };
 
 // Helper function to get chapters for a category

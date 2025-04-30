@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CategoryCard from '../components/CategoryCard';
+import EducatorProfile from '../components/EducatorProfile';
 import { getClassById, getResourcesByClassAndCategory } from '../data/classData';
 
 const ClassResources: React.FC = () => {
@@ -53,7 +54,7 @@ const ClassResources: React.FC = () => {
             <h1 className="page-title">Resources for {classData.name}</h1>
             <p className="text-lg text-gray-600 max-w-4xl">
               Access all educational materials for {classData.name}. 
-              Click on "Open Google Drive" to access resources for each category.
+              Click on "View Chapters" to see chapter-specific resources.
             </p>
           </div>
           
@@ -61,8 +62,8 @@ const ClassResources: React.FC = () => {
             {classData.categories.map((category) => {
               const resources = getResourcesByClassAndCategory(classData.id, category.id);
               const resourceCount = resources.length;
-              // Get the first resource's drive link if resources exist, otherwise use a default or empty string
-              const driveLink = resourceCount > 0 ? resources[0].driveLink : '';
+              // For categories with chapters, count the chapters instead of resources
+              const count = category.chapters ? category.chapters.length : resourceCount;
               
               return (
                 <CategoryCard
@@ -72,12 +73,16 @@ const ClassResources: React.FC = () => {
                   name={category.name}
                   description={category.description}
                   icon={category.icon}
-                  count={resourceCount}
-                  driveLink={driveLink}
+                  count={count}
                 />
               );
             })}
           </div>
+          
+          <section className="mb-12">
+            <h2 className="section-title mb-6">About Your Educator</h2>
+            <EducatorProfile />
+          </section>
         </div>
       </main>
       
