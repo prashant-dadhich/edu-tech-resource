@@ -45,7 +45,7 @@ const ClassResources: React.FC = () => {
       <main className="flex-grow">
         <div className="page-container">
           <div className="breadcrumbs">
-            <Link to="/">Home</Link>
+            <Link to="#">Home</Link>
             <span className="divider">/</span>
             <span>{classData.name}</span>
           </div>

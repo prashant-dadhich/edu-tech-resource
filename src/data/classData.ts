@@ -321,12 +321,12 @@ export const classes: ClassData[] = [
     categories: getClassCategories("class-10"),
     resources: {
       notes: [{
-        id: "class9-notes-1",
+        id: "class10-notes-1",
         title: "Science Chapter 1 Notes",
         description: "Matter in Our Surroundings",
         driveLink: "https://drive.google.com/drive/folders/sample-link",
         date: "2023-08-10",
-      },],
+      }],
       qa: [],
       ncert: [],
       worksheets: [],
@@ -391,7 +391,7 @@ export const getCategoryById = (categoryId: string): ResourceCategory | undefine
 };
 
 // Helper function to get chapters for a category
-export const getChaptersByCategory = (categoryId: string): Chapter[] => {
-  const category = getCategoryById(categoryId);
-  return category?.chapters || [];
+export const getChaptersByCategory = (classId: string): ResourceCategory[] => {
+  const category = getClassCategories(classId);
+  return category || [];
 };

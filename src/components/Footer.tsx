@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           
-          <div className="flex space-x-6">
+          {/* <div className="flex space-x-6">
             <Link to="/" className="text-gray-600 hover:text-education-blue text-sm">
               Home
             </Link>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             <a href="#" className="text-gray-600 hover:text-education-blue text-sm">
               About
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

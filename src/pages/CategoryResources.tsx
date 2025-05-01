@@ -49,7 +49,7 @@ const CategoryResources: React.FC = () => {
       <main className="flex-grow">
         <div className="page-container">
           <div className="breadcrumbs">
-            <Link to="/">Home</Link>
+            <Link to="#">Home</Link>
             <span className="divider">/</span>
             <Link to={`/class/${classId}`}>{classData.name}</Link>
             <span className="divider">/</span>
