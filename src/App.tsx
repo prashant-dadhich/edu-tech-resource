@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +8,7 @@ import Index from "./pages/Index";
 import ClassResources from "./pages/ClassResources";
 import CategoryChapters from "./pages/CategoryChapters";
 import NotFound from "./pages/NotFound";
+import QuestionPDFGeneratorPage from "./pages/QuestionPDFGeneratorPage";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +53,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/class/:classId" element={<ClassResources />} />
             <Route path="/class/:classId/category/:categoryId" element={<CategoryChapters />} />
+            <Route path="/question-pdf-generator" element={<QuestionPDFGeneratorPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
