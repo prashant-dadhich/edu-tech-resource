@@ -301,7 +301,7 @@ const QuestionPDFGenerator: React.FC = () => {
 
       try {
         // Modern opacity method
-        doc.setGState(new (doc as any).GState({ opacity: 0.1 }));
+        doc.setGState(new (doc as any).GState({ opacity: 0.7 }));
       } catch (e) {
         // Fallback for older versions
         console.warn("Opacity not supported, using light gray color");
