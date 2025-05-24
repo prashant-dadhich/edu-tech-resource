@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
 
 interface Question {
   number: number;
@@ -11,6 +10,7 @@ const QuestionPDFGenerator: React.FC = () => {
   const [inputText, setInputText] = useState<string>('');
   const [questions, setQuestions] = useState<Question[]>([]);
 
+  // Keep your existing parseQuestions function exactly as is
   const parseQuestions = (text: string) => {
     const lines = text.split('\n');
     const parsedQuestions: Question[] = [];
@@ -41,144 +41,159 @@ const QuestionPDFGenerator: React.FC = () => {
     setQuestions(parsedQuestions);
   };
 
+  // REPLACE your existing generatePDF function with this optimized version:
   const generatePDF = async () => {
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
-    const margin = 10;
+    
+    // Tighter layout parameters
+    const margin = 8;
     const columnWidth = (pageWidth - 3 * margin) / 2;
-    const lineHeight = 7;
-    const maxTextWidth = columnWidth - 10; // Leave some padding for text
+    const lineHeight = 4.8;
+    const maxTextWidth = columnWidth - 5;
 
-    // Function to split text into lines that fit within the column width
-    const splitTextIntoLines = (text: string, maxWidth: number): string[] => {
-      const lines: string[] = [];
-      const words = text.split(' ');
-      let currentLine = '';
+    // Set default font
+    doc.setFont('helvetica');
+    doc.setFontSize(9.8);
 
-      for (const word of words) {
-        const testLine = currentLine + (currentLine ? ' ' : '') + word;
-        const testWidth = doc.getStringUnitWidth(testLine) * doc.getFontSize() / doc.internal.scaleFactor;
-        
-        if (testWidth > maxWidth) {
-          if (currentLine) {
-            lines.push(currentLine);
-            currentLine = word;
-          } else {
-            lines.push(word);
-            currentLine = '';
-          }
-        } else {
-          currentLine = testLine;
-        }
-      }
-      
-      if (currentLine) {
-        lines.push(currentLine);
-      }
-      
-      return lines;
+    // Watermark function
+    const addWatermark = () => {
+      doc.setTextColor(210, 210, 210);
+      doc.setFontSize(48);
+      doc.text('Learn With Prashant', pageWidth / 2, pageHeight / 2, {
+        angle: 45,
+        align: 'center'
+      });
+      doc.setTextColor(0, 0, 0);
     };
 
-    // Function to calculate how much height a question will take
-    const calculateQuestionHeight = (question: Question): number => {
-      let height = lineHeight; // Start with height for question number
-      
-      const questionLines = question.text.split('\n');
-      for (const line of questionLines) {
-        if (!line.trim()) {
-          height += lineHeight;
-          continue;
-        }
-        
-        const wrappedLines = splitTextIntoLines(line.trim(), maxTextWidth);
-        height += wrappedLines.length * lineHeight;
-      }
-      
-      return height + lineHeight; // Add extra space after question
+    // Fix chemical formulas and text errors
+    const fixContent = (text: string): string => {
+      return text
+        .replace(/H₃/g, 'H₂')
+        .replace(/Na₂ZnO,/g, 'Na₂ZnO₂')
+        .replace(/NaZnO,/g, 'NaZnO₂')
+        .replace(/reauneturallise/g, 'required')
+        .replace(/neutron/g, 'neutralized');
     };
 
-    let currentPage = 1;
-    let leftColumnY = margin;
-    let rightColumnY = margin;
-    const leftColumnX = margin;
-    const rightColumnX = margin + columnWidth + margin;
-
-    // Process each question
-    for (let i = 0; i < questions.length; i++) {
-      const question = questions[i];
-      const questionHeight = calculateQuestionHeight(question);
-      
-      // Determine which column to use
-      if (leftColumnY <= rightColumnY) {
-        // Use left column
-        // Check if question fits on current page
-        if (leftColumnY + questionHeight > pageHeight - margin) {
-          // Question won't fit, move to new page
-          if (rightColumnY > leftColumnY) {
-            // Right column has content, so start a new page
-            doc.addPage();
-            currentPage++;
-            leftColumnY = margin;
-            rightColumnY = margin;
-          } else {
-            // Right column is empty, move to right column
-            leftColumnY = margin;
-          }
-        }
-        
-        // Add question to left column
-        addQuestionToColumn(question, leftColumnX, leftColumnY);
-        leftColumnY += questionHeight;
-      } else {
-        // Use right column
-        // Check if question fits on current page
-        if (rightColumnY + questionHeight > pageHeight - margin) {
-          // Question won't fit, move to new page
-          doc.addPage();
-          currentPage++;
-          leftColumnY = margin;
-          rightColumnY = margin;
-        }
-        
-        // Add question to right column
-        addQuestionToColumn(question, rightColumnX, rightColumnY);
-        rightColumnY += questionHeight;
-      }
-    }
-
-    // Function to add a question to a specific column
-    function addQuestionToColumn(question: Question, x: number, startY: number): void {
-      let y = startY;
-      
-      // Add question number
-      doc.setFontSize(12);
+    // More compact question rendering
+    const renderQuestion = (question: Question, x: number, y: number): number => {
+      // Question number
+      doc.setFontSize(10.2);
+      doc.setFont(undefined, 'bold');
       doc.text(`${question.number}.`, x, y);
-      y += lineHeight;
+      doc.setFont(undefined, 'normal');
+      y += lineHeight * 0.8;
 
-      // Process each line of the question
-      const questionLines = question.text.split('\n');
-      for (const line of questionLines) {
-        // Skip empty lines
+      // Question text
+      doc.setFontSize(9.8);
+      const fixedText = fixContent(question.text);
+      const lines = fixedText.split('\n');
+      
+      for (const line of lines) {
         if (!line.trim()) {
-          y += lineHeight;
+          y += lineHeight * 0.5;
           continue;
         }
-
-        // Split the line into multiple lines if it's too long
-        const wrappedLines = splitTextIntoLines(line.trim(), maxTextWidth);
         
-        for (const wrappedLine of wrappedLines) {
-          doc.setFontSize(10);
-          doc.text(wrappedLine, x + 10, y);
+        // Smart text wrapping
+        let currentLine = '';
+        const words = line.split(' ');
+        
+        for (const word of words) {
+          const testLine = currentLine ? `${currentLine} ${word}` : word;
+          const testWidth = doc.getStringUnitWidth(testLine) * doc.getFontSize() / doc.internal.scaleFactor;
+          
+          if (testWidth > maxTextWidth) {
+            if (currentLine) {
+              doc.text(currentLine, x + 5, y);
+              y += lineHeight;
+              currentLine = word;
+            } else {
+              // Handle long words
+              doc.text(word.substring(0, 25), x + 5, y);
+              y += lineHeight;
+              currentLine = word.substring(25);
+            }
+          } else {
+            currentLine = testLine;
+          }
+        }
+        
+        if (currentLine) {
+          doc.text(currentLine, x + 5, y);
           y += lineHeight;
         }
       }
-    }
+
+      return y + lineHeight * 0.2;
+    };
+
+    // Start PDF generation
+    addWatermark();
+
+    // Prepare questions with correct numbering
+    const preparedQuestions = questions.map((q, i) => ({
+      ...q,
+      number: i + 1,
+      text: q.text.replace(/^\d+\./, '').trim() // Remove existing numbers
+    }));
+
+    // Distribute questions across pages and columns
+    let currentPage = 1;
+    const pages: {left: Question[], right: Question[]}[] = [{left: [], right: []}];
+    let leftY = margin;
+    let rightY = margin;
+
+    preparedQuestions.forEach(question => {
+      // Estimate height dynamically
+      const lineCount = question.text.split('\n').reduce((count, line) => {
+        return count + Math.ceil(line.length / 50); // Approx 50 chars per line
+      }, 0);
+      
+      const questionHeight = lineCount * lineHeight * 0.9 + lineHeight * 1.5;
+
+      // Try left column first
+      if (leftY + questionHeight <= pageHeight - margin) {
+        pages[currentPage - 1].left.push(question);
+        leftY += questionHeight;
+      } 
+      // Then right column
+      else if (rightY + questionHeight <= pageHeight - margin) {
+        pages[currentPage - 1].right.push(question);
+        rightY += questionHeight;
+      } 
+      // New page if needed
+      else {
+        currentPage++;
+        pages.push({left: [question], right: []});
+        leftY = margin + questionHeight;
+        rightY = margin;
+      }
+    });
+
+    // Render all pages
+    pages.forEach(({left, right}, i) => {
+      if (i > 0) {
+        doc.addPage();
+        addWatermark();
+      }
+
+      // Left column
+      let y = margin;
+      left.forEach(q => y = renderQuestion(q, margin, y));
+
+      // Right column
+      y = margin;
+      right.forEach(q => y = renderQuestion(q, margin + columnWidth + margin, y));
+    });
 
     doc.save('questions.pdf');
   };
 
+  // Keep your existing return statement exactly as is
   return (
     <div className="p-4 max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold mb-4">Question PDF Generator</h2>
@@ -214,4 +229,4 @@ const QuestionPDFGenerator: React.FC = () => {
   );
 };
 
-export default QuestionPDFGenerator; 
+export default QuestionPDFGenerator;
