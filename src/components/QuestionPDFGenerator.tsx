@@ -309,10 +309,18 @@ const QuestionPDFGenerator: React.FC = () => {
 
       doc.setTextColor(210, 210, 210);
       doc.setFontSize(48); // Smaller watermark size
-      doc.text(watermarkText, pageWidth / 2, pageHeight / 2, {
-        angle: 45,
+      doc.text(watermarkText, pageWidth / 2, pageHeight / 2.4, {
+        angle: 30,
         align: "center",
+        renderingMode: "fill"
+
       });
+      // Optionally add a second watermark for better coverage
+  doc.text(watermarkText, pageWidth / 1.8, pageHeight / 1.1 , {
+    angle: 30,
+    align: "center",
+    // renderingMode: "fill"
+  });
 
       // Restore graphics state
       try {
@@ -643,3 +651,183 @@ const QuestionPDFGenerator: React.FC = () => {
 };
 
 export default QuestionPDFGenerator;
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import { jsPDF } from "jspdf";
+
+// interface Question {
+//   number: number;
+//   text: string;
+//   subject: string;
+// }
+
+// const QuestionBankPDFGenerator: React.FC = () => {
+//   const [questions, setQuestions] = useState<Question[]>([]);
+//   const [currentQuestion, setCurrentQuestion] = useState<string>("");
+//   const [currentSubject, setCurrentSubject] = useState<string>("Physics");
+//   const [headerTitle, setHeaderTitle] = useState<string>("Question Bank");
+
+//   const addQuestion = () => {
+//     if (!currentQuestion.trim()) return;
+    
+//     const newQuestion: Question = {
+//       number: questions.length + 1,
+//       text: currentQuestion,
+//       subject: currentSubject
+//     };
+    
+//     setQuestions([...questions, newQuestion]);
+//     setCurrentQuestion("");
+//   };
+
+//   const generatePDF = () => {
+//     const doc = new jsPDF();
+//     const pageWidth = doc.internal.pageSize.getWidth();
+//     const margin = 15;
+//     const lineHeight = 7;
+//     let yPosition = margin + 20;
+
+//     // Group questions by subject
+//     const questionsBySubject: Record<string, Question[]> = {};
+//     questions.forEach(q => {
+//       if (!questionsBySubject[q.subject]) {
+//         questionsBySubject[q.subject] = [];
+//       }
+//       questionsBySubject[q.subject].push(q);
+//     });
+
+//     // Add cover page
+//     doc.setFontSize(20);
+//     doc.text(headerTitle, pageWidth / 2, 50, { align: "center" });
+//     doc.setFontSize(12);
+//     doc.text("Generated Question Bank", pageWidth / 2, 70, { align: "center" });
+//     doc.addPage();
+
+//     // Process each subject
+//     Object.entries(questionsBySubject).forEach(([subject, subjectQuestions]) => {
+//       // Add subject header
+//       doc.setFontSize(16);
+//       doc.setTextColor(0, 0, 128); // Dark blue
+//       yPosition = margin;
+//       doc.text(`${subject} Questions`, margin, yPosition);
+//       yPosition += lineHeight * 1.5;
+//       doc.setTextColor(0, 0, 0); // Black
+
+//       // Add questions
+//       doc.setFontSize(12);
+//       subjectQuestions.forEach(q => {
+//         // Check if we need a new page
+//         if (yPosition > doc.internal.pageSize.getHeight() - margin - 30) {
+//           doc.addPage();
+//           yPosition = margin;
+//           // Repeat subject header on new page
+//           doc.setFontSize(16);
+//           doc.setTextColor(0, 0, 128);
+//           doc.text(`${subject} Questions (continued)`, margin, yPosition);
+//           yPosition += lineHeight * 1.5;
+//           doc.setTextColor(0, 0, 0);
+//           doc.setFontSize(12);
+//         }
+
+//         // Add question number and text
+//         doc.setFont(undefined, "bold");
+//         doc.text(`${q.number}.`, margin, yPosition);
+//         doc.setFont(undefined, "normal");
+        
+//         // Split question text into lines
+//         const lines = doc.splitTextToSize(q.text, pageWidth - margin * 2);
+//         doc.text(lines, margin + 10, yPosition);
+//         yPosition += lineHeight * lines.length;
+//       });
+
+//       // Add space between subjects
+//       yPosition += lineHeight * 2;
+//     });
+
+//     doc.save("question_bank.pdf");
+//   };
+
+//   return (
+//     <div className="p-4 max-w-4xl mx-auto">
+//       <h1 className="text-2xl font-bold mb-6">Question Bank Generator</h1>
+      
+//       <div className="mb-6 p-4 border rounded-lg bg-gray-50">
+//         <h2 className="text-lg font-semibold mb-3">PDF Settings</h2>
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//           <div>
+//             <label className="block text-sm font-medium mb-1">Document Title</label>
+//             <input
+//               type="text"
+//               value={headerTitle}
+//               onChange={(e) => setHeaderTitle(e.target.value)}
+//               className="w-full p-2 border rounded"
+//             />
+//           </div>
+//           <div>
+//             <label className="block text-sm font-medium mb-1">Current Subject</label>
+//             <select
+//               value={currentSubject}
+//               onChange={(e) => setCurrentSubject(e.target.value)}
+//               className="w-full p-2 border rounded"
+//             >
+//               <option value="Physics">Physics</option>
+//               <option value="Chemistry">Chemistry</option>
+//               <option value="Mathematics">Mathematics</option>
+//               <option value="Biology">Biology</option>
+//             </select>
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="mb-6">
+//         <label className="block text-sm font-medium mb-1">Question Text</label>
+//         <textarea
+//           className="w-full h-32 p-2 border rounded"
+//           value={currentQuestion}
+//           onChange={(e) => setCurrentQuestion(e.target.value)}
+//           placeholder="Enter question text..."
+//         />
+//         <button
+//           className="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+//           onClick={addQuestion}
+//         >
+//           Add Question
+//         </button>
+//       </div>
+
+//       <button
+//         className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+//         onClick={generatePDF}
+//         disabled={questions.length === 0}
+//       >
+//         Generate PDF
+//       </button>
+
+//       <div className="mt-6">
+//         <h2 className="text-xl font-semibold mb-3">Question Preview</h2>
+//         <div className="space-y-4">
+//           {questions.map((q) => (
+//             <div key={q.number} className="border p-4 rounded bg-white">
+//               <div className="flex justify-between items-start mb-1">
+//                 <span className="font-bold text-blue-600">{q.number}.</span>
+//                 <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+//                   {q.subject}
+//                 </span>
+//               </div>
+//               <pre className="whitespace-pre-wrap font-sans text-sm">{q.text}</pre>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default QuestionBankPDFGenerator;
