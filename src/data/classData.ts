@@ -1,4 +1,3 @@
-
 export type Chapter = {
   id: string;
   title: string;
@@ -32,60 +31,134 @@ export type ClassData = {
 
 // Define chapters by class for the notes category
 const class6NotesChapters: Chapter[] = [
-  { id: "food", title: "1. Food: Where Does It Come From?", driveLink: "https://drive.google.com/drive/folders/class6-food" },
-  { id: "components", title: "2. Components of Food", driveLink: "https://drive.google.com/drive/folders/class6-components" },
-  { id: "fibre", title: "3. Fibre to Fabric", driveLink: "https://drive.google.com/drive/folders/class6-fibre" },
-  { id: "sorting", title: "4. Sorting Materials into Groups", driveLink: "https://drive.google.com/drive/folders/class6-sorting" },
+  {
+    id: "food",
+    title: "1. Food: Where Does It Come From?",
+    driveLink: "https://drive.google.com/drive/folders/class6-food",
+  },
+  {
+    id: "components",
+    title: "2. Components of Food",
+    driveLink: "https://drive.google.com/drive/folders/class6-components",
+  },
+  {
+    id: "fibre",
+    title: "3. Fibre to Fabric",
+    driveLink: "https://drive.google.com/drive/folders/class6-fibre",
+  },
+  {
+    id: "sorting",
+    title: "4. Sorting Materials into Groups",
+    driveLink: "https://drive.google.com/drive/folders/class6-sorting",
+  },
 ];
 
 const class7NotesChapters: Chapter[] = [
-  { id: "nutrition", title: "1. Nutrition in Plants", driveLink: "https://drive.google.com/drive/folders/class7-nutrition" },
-  { id: "animals", title: "2. Nutrition in Animals", driveLink: "https://drive.google.com/drive/folders/class7-animals" },
-  { id: "fibre", title: "3. Fibre to Fabric", driveLink: "https://drive.google.com/drive/folders/class7-fibre" },
+  {
+    id: "nutrition",
+    title: "1. Nutrition in Plants",
+    driveLink: "https://drive.google.com/drive/folders/class7-nutrition",
+  },
+  {
+    id: "animals",
+    title: "2. Nutrition in Animals",
+    driveLink: "https://drive.google.com/drive/folders/class7-animals",
+  },
+  {
+    id: "fibre",
+    title: "3. Fibre to Fabric",
+    driveLink: "https://drive.google.com/drive/folders/class7-fibre",
+  },
 ];
 
 const class9NotesChapters: Chapter[] = [
-  { id: "matter-surroundings", title: "1. Matter in Our Surroundings", driveLink: "https://drive.google.com/file/d/1juymyywLoEfZ-i5mgRFqo40JNgxLhi9t/view?usp=drivesdk" },
+  {
+    id: "matter-surroundings",
+    title: "1. Matter in Our Surroundings",
+    driveLink:
+      "https://drive.google.com/file/d/1juymyywLoEfZ-i5mgRFqo40JNgxLhi9t/view?usp=drivesdk",
+  },
   // { id: "matter-pure", title: "2. Is Matter Around Us Pure?", driveLink: "https://drive.google.com/drive/folders/class9-pure" },
   // { id: "atoms-molecules", title: "3. Atoms and Molecules", driveLink: "https://drive.google.com/drive/folders/class9-atoms" },
   // { id: "structure-atom", title: "4. Structure of Atom", driveLink: "https://drive.google.com/drive/folders/class9-structure" },
-  { id: "cell", title: "5. Cell", driveLink: "https://drive.google.com/file/d/1k2kWSwj83YPb-VaooFHW_eIOrs0vl4Mv/view?usp=drivesdk" },
+  {
+    id: "cell",
+    title: "5. Cell",
+    driveLink:
+      "https://drive.google.com/file/d/1k2kWSwj83YPb-VaooFHW_eIOrs0vl4Mv/view?usp=drivesdk",
+  },
   // { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/class9-tissue" },
-  { id: "motion", title: "7. Motion", driveLink: "https://drive.google.com/file/d/1k9eX7SzdYH2wLkPmb10NuQeM6aXqcIzz/view?usp=drivesdk" },
-  // { id: "force-laws", title: "8. Force and Laws of Motion", driveLink: "https://drive.google.com/drive/folders/class9-force" },
+  {
+    id: "motion",
+    title: "7. Motion",
+    driveLink:
+      "https://drive.google.com/file/d/1k9eX7SzdYH2wLkPmb10NuQeM6aXqcIzz/view?usp=drivesdk",
+  },
+  {
+    id: "force-laws",
+    title: "8. Force and Laws of Motion",
+    driveLink:
+      "https://drive.google.com/file/d/1DwY5Vfr0E3CxJuZ6l4wf70y_fJR2_F6-/view?usp=drivesdk",
+  },
   // { id: "gravitation", title: "9. Gravitation", driveLink: "https://drive.google.com/drive/folders/class9-gravitation" },
   // { id: "work-energy", title: "10. Work and Energy", driveLink: "https://drive.google.com/drive/folders/class9-energy" },
   // { id: "sound", title: "11. Sound", driveLink: "https://drive.google.com/drive/folders/class9-sound" },
   // { id: "food-resources", title: "12. Food Resources and Development", driveLink: "https://drive.google.com/drive/folders/class9-food" },
 ];
 
-
 // class-10
-// 1. Chemical reactions and equation 
-// 2. Acid bases and salts 
-// 3. Metals and nonmetals 
-// 4. Carbon and its compounds 
-// 5. Life processes 
-// 6. Control and coordination 
-// 7. Reproduction in organisms 
-// 8. Heredity 
-// 9. Light reflection and refraction 
-// 10. Human eye and colourful world 
-// 11. Electricity 
-// 12. Magnetic fields of electric current 
+// 1. Chemical reactions and equation
+// 2. Acid bases and salts
+// 3. Metals and nonmetals
+// 4. Carbon and its compounds
+// 5. Life processes
+// 6. Control and coordination
+// 7. Reproduction in organisms
+// 8. Heredity
+// 9. Light reflection and refraction
+// 10. Human eye and colourful world
+// 11. Electricity
+// 12. Magnetic fields of electric current
 // 13. Our environment
 const class10NotesChapters: Chapter[] = [
-  { id: "chemical-reactions", title: "1. Chemical Reactions and Equations", driveLink: "https://drive.google.com/file/d/1kJUbvYklLVId_FLuPLRrGg_1zqNSGkvK/view?usp=drivesdk" },
-  // { id: "acids-bases", title: "2. Acids, Bases and Salts", driveLink: "https://drive.google.com/drive/folders/class10-acids" },
+  {
+    id: "chemical-reactions",
+    title: "1. Chemical Reactions and Equations",
+    driveLink:
+      "https://drive.google.com/file/d/1kJUbvYklLVId_FLuPLRrGg_1zqNSGkvK/view?usp=drivesdk",
+  },
+  {
+    id: "acids-bases",
+    title: "2. Acids, Bases and Salts",
+    driveLink:
+      "https://drive.google.com/file/d/1DxAS4_fSzdM4HIXTVhuAceUJAoAJBVEH/view?usp=drivesdk",
+  },
   // { id: "metals-nonmetals", title: "3. Metals and Non-metals", driveLink: "https://drive.google.com/drive/folders/class10-metals" },
-  { id: "life-processes", title: "5. Life processes", driveLink: "https://drive.google.com/file/d/1kKMYc38Rln6KnDCwgZoIV7S4hJGQF7c1/view?usp=drivesdk" },
-  { id: "light", title: "9. Light reflection and refraction", driveLink: "https://drive.google.com/drive/folders/class10-metals" },
+  {
+    id: "life-processes",
+    title: "5. Life processes",
+    driveLink:
+      "https://drive.google.com/file/d/1kKMYc38Rln6KnDCwgZoIV7S4hJGQF7c1/view?usp=drivesdk",
+  },
+  {
+    id: "light",
+    title: "9. Light reflection and refraction",
+    driveLink: "https://drive.google.com/drive/folders/class10-metals",
+  },
 ];
 
 // Define chapters by class for the Q&A category
 const class6QAChapters: Chapter[] = [
-  { id: "qa-food", title: "1. Food: Where Does It Come From?", driveLink: "https://drive.google.com/drive/folders/class6-qa-food" },
-  { id: "qa-components", title: "2. Components of Food", driveLink: "https://drive.google.com/drive/folders/class6-qa-components" },
+  {
+    id: "qa-food",
+    title: "1. Food: Where Does It Come From?",
+    driveLink: "https://drive.google.com/drive/folders/class6-qa-food",
+  },
+  {
+    id: "qa-components",
+    title: "2. Components of Food",
+    driveLink: "https://drive.google.com/drive/folders/class6-qa-components",
+  },
 ];
 
 const class9QAChapters: Chapter[] = [
@@ -138,7 +211,7 @@ const getClassCategories = (classId: string): ResourceCategory[] => {
       icon: "file-text",
     },
   ];
-  
+
   // Assign class-specific chapters
   switch (classId) {
     case "class-6":
@@ -158,7 +231,7 @@ const getClassCategories = (classId: string): ResourceCategory[] => {
     default:
       break;
   }
-  
+
   return baseCategories;
 };
 
@@ -320,13 +393,15 @@ export const classes: ClassData[] = [
     description: "Educational resources for Class 10 students",
     categories: getClassCategories("class-10"),
     resources: {
-      notes: [{
-        id: "class10-notes-1",
-        title: "Science Chapter 1 Notes",
-        description: "Matter in Our Surroundings",
-        driveLink: "https://drive.google.com/drive/folders/sample-link",
-        date: "2023-08-10",
-      }],
+      notes: [
+        {
+          id: "class10-notes-1",
+          title: "Science Chapter 1 Notes",
+          description: "Matter in Our Surroundings",
+          driveLink: "https://drive.google.com/drive/folders/sample-link",
+          date: "2023-08-10",
+        },
+      ],
       qa: [],
       ncert: [],
       worksheets: [],
@@ -376,12 +451,14 @@ export const getResourcesByClassAndCategory = (
 ): Resource[] => {
   const classData = getClassById(classId);
   if (!classData) return [];
-  
+
   return classData.resources[categoryId] || [];
 };
 
 // Helper function to get a category by ID
-export const getCategoryById = (categoryId: string): ResourceCategory | undefined => {
+export const getCategoryById = (
+  categoryId: string
+): ResourceCategory | undefined => {
   // Look for the category across all classes
   for (const classData of classes) {
     const category = classData.categories.find((cat) => cat.id === categoryId);
