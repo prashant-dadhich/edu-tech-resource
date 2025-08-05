@@ -87,7 +87,12 @@ const class9NotesChapters: Chapter[] = [
     driveLink:
       "https://drive.google.com/file/d/1k2kWSwj83YPb-VaooFHW_eIOrs0vl4Mv/view?usp=drivesdk",
   },
-  // { id: "tissue", title: "6. Tissue", driveLink: "https://drive.google.com/drive/folders/class9-tissue" },
+  {
+    id: "tissue",
+    title: "6. Tissue",
+    driveLink:
+      "https://drive.google.com/file/d/1ARiyynwRSlXCo3Q6gIzN7QJhYK2SmoBL/view?usp=drivesdk",
+  },
   {
     id: "motion",
     title: "7. Motion",
