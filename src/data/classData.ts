@@ -150,6 +150,18 @@ const class10NotesChapters: Chapter[] = [
     title: "9. Light reflection and refraction",
     driveLink: "https://drive.google.com/drive/folders/class10-metals",
   },
+  {
+    id: "human-eye",
+    title: "10. Human eye and colorful world",
+    driveLink:
+      "https://drive.google.com/file/d/17TAxs3V32Aap1ZD66tdmE5b5SfxPLb-b/view?usp=drivesdk",
+  },
+  {
+    id: "our-enviroment",
+    title: "13. Our Enviroment",
+    driveLink:
+      "https://drive.google.com/file/d/1cp5K2UDU3b887PYz5PRD3exrXEVfu2U9/view?usp=drivesdk",
+  },
 ];
 
 // Define chapters by class for the Q&A category
